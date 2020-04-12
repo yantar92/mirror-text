@@ -1,12 +1,17 @@
+:PROPERTIES:
+:ID:       390f97c1-a8fa-4ccc-a79e-6bf16c8e3796
+:END:
 
 
 * DOING [#A] Another try of mirror-text
-SCHEDULED: <2020-01-13 Mon .+1d>
+SCHEDULED: <2020-04-11 Sat .+1d>
 :PROPERTIES:
 :CREATED: [2019-08-03 Sat 20:19]
 :SHOWFROMDATE: 2020-04-07
 :END:
 :LOGBOOK:
+CLOCK: [2020-04-12 Sun 21:24]
+CLOCK: [2020-04-12 Sun 19:56]--[2020-04-12 Sun 21:20] =>  1:24
 CLOCK: [2019-12-31 Tue 15:13]--[2019-12-31 Tue 15:55] =>  0:42
 CLOCK: [2019-12-25 Wed 15:47]--[2019-12-25 Wed 15:59] =>  0:12
 - Refiled on [2019-12-23 Mon 11:08]
@@ -69,8 +74,6 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
 
 
 #+name: implementation using buffer modification hooks
-#+begin_src emacs-lisp
-;; variable definitions
 #+begin_src emacs-lisp :tangle mirror-text.el
 ;;; mirror-text.el --- Synchronise changes between text regions -*- lexical-binding: t; -*-
 
