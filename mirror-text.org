@@ -71,6 +71,42 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
 #+name: implementation using buffer modification hooks
 #+begin_src emacs-lisp
 ;; variable definitions
+#+begin_src emacs-lisp :tangle mirror-text.el
+;;; mirror-text.el --- Synchronise changes between text regions -*- lexical-binding: t; -*-
+
+;; Version: 0.1
+;; Author: Ihor Radchenko <yantar92@gmail.com>
+;; Created: 12 April 2020
+
+;;; Commentary:
+
+;; This packages is a framework to create synchronised text regions.
+;; The regions may be in the same buffer or in multiple buffers.
+;; The text properties can be also synchronised.
+;;
+;; !!!!! Important
+;; This backage is just a proof of concept and will be a subject of breaking changes
+;; !!!!!
+;;
+;; Usage:
+;; The main entry point is `mirror-text-create-chunk', which marks the text in current region to be synchronised in future.
+;; The marked text is called a chunk.
+;; The function returns virtual-chunk, which is the central unit of synchronisation.
+;; Regions from virtual-chunk can be inserted to other positions/buffers via `mirror-text--create-chunk' and automatically marked as new chunks.
+;; Changes in all the chunks associated with virtual chunk buffer (or regions in this buffer) will be synchronised.
+;; 
+;; **The following is untested**
+;; The virtual chunk buffer may have an active major mode, which will allow uniform fontification of all the chunks.
+;; Moreover, the chunks might (not implemented) have overriding keymap, which redirects commands to the virtual chunk buffer.
+;; This, in theory, will effectively create separate major mode for all the chunks regardless of the buffer where the chunks are located.
+;;
+;; Example usage:
+;; 1. Activate region of text and run M-x mirror-text-create-chunk
+;; This will create mirror-text--virtual-chunks variable containing the created chunk. 
+;; 2. To insert a new chunk, evaluate (mirror-text--create-chunk (car mirror-text--virtual-chunks) (point) (1+ (point))) with point where you want to insert the new chunk.
+;;
+
+;;; Code:
 
 (defvar mirror-text--virtual-chunks nil
   "List of all the virtual chunk buffers.")
