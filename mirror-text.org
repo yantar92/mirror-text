@@ -213,14 +213,14 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
   (let ((inhibit-modification-hooks t))
     ;;(mirror-text--update-chunk beg)
     (add-to-list 'after-change-functions #'mirror-text--chunk-after-change-function)
-    (add-to-list 'mirror-text--buffer-chunk-modifications (mirror-text--pos-to-marker beg))))
+    (add-to-list 'mirror-text--buffer-chunk-modifications (get-text-property beg 'mirror-text-chunk))))
 
 (defun mirror-text--chunk-after-change-function (beg end oldlen)
   "Propagate the modifications marked by `mirror-text--chunk-modify-function'."
   (require 'org-macs) ;; org-with-point-at
   (when (boundp 'mirror-text--buffer-chunk-modifications)
     (unwind-protect
-	(mapc #'mirror-text--update-chunk mirror-text--buffer-chunk-modifications)
+	(mapc #'mirror-text--update-chunk (mapcar (lambda (chunk) (car (alist-get :region (mirror-text--chunk-info chunk)))) mirror-text--buffer-chunk-modifications))
       (setq mirror-text--buffer-chunk-modifications nil))))
 
 (defun mirror-text--chunk-insert-function (beg end)
@@ -241,8 +241,8 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
     (put-text-property beg end 'modification-hooks (list #'mirror-text--chunk-modify-function))
     (put-text-property beg end 'insert-in-front-hooks (list #'mirror-text--chunk-insert-function))
     (put-text-property beg end 'insert-behind-hooks (list #'mirror-text--chunk-insert-function))
-    (add-function :around (local 'filter-buffer-substring-function) #'mirror-text--buffer-substring-filter)
-    ;; (put-text-property beg end  'font-lock-face 'mirror-text-background)
+    ;; (add-function :around (local 'filter-buffer-substring-function) #'mirror-text--buffer-substring-filter)
+    (put-text-property beg end  'font-lock-face 'mirror-text-background)
     ;; (put-text-property beg (1+ beg) 'display (concat mirror-text-beg-chunk-indicator (buffer-substring-no-properties beg (1+ beg))))
     ;; (put-text-property (1- end) end 'display (concat (buffer-substring-no-properties (1- end) end) mirror-text-end-chunk-indicator ))
     ))
@@ -309,7 +309,9 @@ The text in the region will be replaced by the :virtual-region from VIRTUAL-CHUN
   (require 'org-id) ;; org-id-uuid
   (setf (car virtual-region) (mirror-text--pos-to-marker (car virtual-region) virtual-chunk))
   (setf (cdr virtual-region) (mirror-text--pos-to-marker (cdr virtual-region) virtual-chunk))
-  (unless (and (markerp beg) (markerp end)) (error "BEG and END should be markers"))
+  (setf beg (mirror-text--pos-to-marker beg))
+  (setf end (mirror-text--pos-to-marker end))
+  ;; (unless (and (markerp beg) (markerp end)) (error "BEG and END should be markers"))
   (set-marker-insertion-type end 'follow-insertion)
   (set-marker-insertion-type (cdr virtual-region) 'follow-insertion)
   (let ((chunk (list (cons ':virtual-region virtual-region)
@@ -328,21 +330,21 @@ The text in the region will be replaced by the :virtual-region from VIRTUAL-CHUN
 	    (mirror-text--propertize beg end (list (cons ':chunk-id chunk-id)
 						   (cons ':virtual-chunk virtual-chunk)))))))))
 
-(defun mirror-text--find-chunk-region (pom)
-  "Find a chunk region containing POM."
-  (require 'org-macs) ;; org-with-point-at
-  (org-with-point-at pom
-    (let* ((pos (marker-position (mirror-text--pos-to-marker pom)))
-	   (beg (and (get-text-property pos 'mirror-text-chunk) pom))
-	   (end beg))
-      (when beg
-	(setq beg (or (previous-single-property-change (1+ pos) 'mirror-text-chunk nil (point-min))
-		      beg))
-	(setq end (or (next-single-property-change pos 'mirror-text-chunk nil (point-max))
-		      end))
-	(setq beg (mirror-text--pos-to-marker beg))
-	(setq end (mirror-text--pos-to-marker end nil 'move-after-insert))
-	(cons beg end)))))
+;; (defun mirror-text--find-chunk-region (pom)
+;;   "Find a chunk region containing POM."
+;;   (require 'org-macs) ;; org-with-point-at
+;;   (org-with-point-at pom
+;;     (let* ((pos (marker-position (mirror-text--pos-to-marker pom)))
+;; 	   (beg (and (get-text-property pos 'mirror-text-chunk) pom))
+;; 	   (end beg))
+;;       (when beg
+;; 	(setq beg (or (previous-single-property-change pos 'mirror-text-chunk)
+;; 		      beg))
+;; 	(setq end (or (next-single-property-change pos 'mirror-text-chunk)
+;; 		      end))
+;; 	(setq beg (mirror-text--pos-to-marker beg))
+;; 	(setq end (mirror-text--pos-to-marker end nil 'move-after-insert))
+;; 	(cons beg end)))))
 
 (defun mirror-text--chunk-info (chunk)
   "Return CHUNK info as it is stored in the virtual-chunk buffer.
@@ -361,7 +363,8 @@ Return nil when CHUNK is not a valid chunk."
   (require 'org-macs) ;; org-with-point-at
   (let ((region (alist-get :region chunk-info)))
     (when (and (buffer-live-p (marker-buffer (car region)))
-	       (mirror-text--markercons= region (mirror-text--find-chunk-region (car region))))
+	       ;; (mirror-text--markercons= region (mirror-text--find-chunk-region (car region)))
+               )
       (with-current-buffer (marker-buffer (car region))
 	(equal chunk-info
                (mirror-text--chunk-info (get-text-property (marker-position (car region)) 'mirror-text-chunk)))))))
@@ -394,15 +397,17 @@ Return nil when CHUNK is not a valid chunk."
   (require 'org-macs) ; org-with-point-at
   (let* ((pos (or pom (point)))
 	 (chunk (get-text-property pos 'mirror-text-chunk))
-	 (chunk-region (mirror-text--find-chunk-region pos))
+	 ;; (chunk-region (mirror-text--find-chunk-region pos));;
+         (chunk-region (alist-get :region chunk))
          (begoffset (or (get-text-property pos 'mirror-text--begoffset) 0))
          (endoffset (or (get-text-property pos 'mirror-text--endoffset) 0)))
     (when chunk
       (let ((chunk-info (mirror-text--chunk-info chunk)))
 	(if (not chunk-info)
             (remove-text-properties (car chunk-region) (cdr chunk-region) '(mirror-text-chunk nil mirror-text--begoffset nil mirror--text-endoffset nil font-lock-face nil))
-	  (if (and (mirror-text--markercons= (alist-get :region chunk-info)
-					     chunk-region)
+	  (if (and
+                   ;; (mirror-text--markercons= (alist-get :region chunk-info)
+		   ;; 			     chunk-region)
                    (zerop begoffset)
                    (zerop endoffset))
               (with-current-buffer (alist-get :virtual-chunk chunk) (mirror-text--virtual-chunk-ingest-chunk (alist-get :chunk-id chunk)))
@@ -428,25 +433,23 @@ Return nil when CHUNK is not a valid chunk."
 ;; Example:
 ;; (add-function :around (local 'filter-buffer-substring-function)
 ;;               #'nameless--filter-string)
-(defun mirror-text--buffer-substring-filter (oldfun beg end &optional delete)
-  "Detect copied chunks and handle chunks copied partially.
-The specification follows `filter-buffer-substring-function' requirements."
-  (when (< end beg) (mirror-text--swap beg end))
-  (let* ((begchunk-info (mirror-text--chunk-info (get-text-property beg 'mirror-text-chunk)))
-	 (endchunk-info (mirror-text--chunk-info (get-text-property (1- end) 'mirror-text-chunk)))
-         (begoffset (when begchunk-info (- beg (car (alist-get :region begchunk-info)))))
-         (endoffset (when endchunk-info (- (cdr (alist-get :region endchunk-info)) end)))
-         (substring (funcall oldfun beg end delete)))
-    (when substring
-      (with-temp-buffer
-	(insert substring)
-        (let ((inhibit-modification-hooks t))
-          ;; (remove-text-properties (point-min) (point-max) '(font-lock-face nil)) ;; may need to be smarter
-	  (when begoffset (put-text-property (point-min) (cdr (mirror-text--find-chunk-region (point-min))) 'mirror-text--begoffset begoffset))
-	  (when endoffset (put-text-property (car (mirror-text--find-chunk-region (- (point-max) 1))) (point-max) 'mirror-text--endoffset endoffset))
-          (mirror-text--update-chunk (point-min))
-          (mirror-text--update-chunk (point-max)))
-	(buffer-string)))))
+;; (defun mirror-text--buffer-substring-filter (oldfun beg end &optional delete)
+;;   "Detect copied chunks and handle chunks copied partially.
+;; The specification follows `filter-buffer-substring-function' requirements."
+;;   (when (< end beg) (mirror-text--swap beg end))
+;;   (let* ((begchunk-info (mirror-text--chunk-info (get-text-property beg 'mirror-text-chunk)))
+;; 	 (endchunk-info (mirror-text--chunk-info (get-text-property (1- end) 'mirror-text-chunk)))
+;;          (begoffset (when begchunk-info (- beg (car (alist-get :region begchunk-info)))))
+;;          (endoffset (when endchunk-info (- (cdr (alist-get :region endchunk-info)) end)))
+;;          (substring (funcall oldfun beg end delete)))
+;;     (when substring
+;;       (with-temp-buffer
+;;         (let ((inhibit-modification-hooks t))
+;;           (insert substring)  
+;;           ;; (remove-text-properties (point-min) (point-max) '(font-lock-face nil)) ;; may need to be smarter
+;; 	  (when begoffset (put-text-property (point-min) (cdr (mirror-text--find-chunk-region (point-min))) 'mirror-text--begoffset begoffset))
+;; 	  (when endoffset (put-text-property (car (mirror-text--find-chunk-region (- (point-max) 1))) (point-max) 'mirror-text--endoffset endoffset)))
+;; 	(buffer-string)))))
 
 ;; TODO: create the minor mode setting modification functions
 
@@ -466,9 +469,10 @@ The specification follows `filter-buffer-substring-function' requirements."
   (let ((virtual-chunk (mirror-text--create-virtual-chunk (buffer-substring-no-properties beg end))))
     (mirror-text--create-chunk virtual-chunk beg end)))
 
+(provide 'mirror-text)
 #+end_src
 
-*************** SOMEDAY check this for the mirror-text |- (Lenticular Text For Emacs)                       :BOOKMARK:
+*************** SOMEDAY check this for the mirror-text |- (Lenticular Text For Emacs)                                    :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-08-24 Sat 12:29]
 :Source: http://homepages.cs.ncl.ac.uk/phillip.lord/lentic/lenticular.html
