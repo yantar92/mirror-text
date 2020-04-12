@@ -205,18 +205,6 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
 
 ;; core chunk code
 
-(defun mirror-text--get-virtual-pos (pom chunk)
-  "Calculate position of POM in virtual CHUNK buffer."
-  (+ (car (alist-get :virtual-region chunk))
-     (- pom
-	(car (alist-get :region chunk)))))
-
-(defun mirror-text--get-real-pos (pom chunk)
-  "Calculate position of POM in real CHUNK buffer."
-  (+ (car (alist-get :region chunk))
-     (- pom
-	(car (alist-get :virtual-region chunk)))))
-
 (defun mirror-text--chunk-modify-function (beg end)
   "Mark the upcoming modifications in the current chunk to be processed by `mirror-text--chunk-after-change-function'."
   (unless (boundp 'mirror-text--buffer-chunk-modifications)
