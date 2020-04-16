@@ -4,13 +4,13 @@
 
 
 * DOING [#A] Another try of mirror-text
-SCHEDULED: <2020-04-11 Sat .+1d>
+SCHEDULED: <2020-04-16 Thu .+1d>
 :PROPERTIES:
 :CREATED: [2019-08-03 Sat 20:19]
-:SHOWFROMDATE: 2020-04-07
+:SHOWFROMDATE: 2020-04-18
 :END:
 :LOGBOOK:
-CLOCK: [2020-04-12 Sun 21:24]
+CLOCK: [2020-04-12 Sun 21:24]--[2020-04-12 Sun 22:06] =>  0:42
 CLOCK: [2020-04-12 Sun 19:56]--[2020-04-12 Sun 21:20] =>  1:24
 CLOCK: [2019-12-31 Tue 15:13]--[2019-12-31 Tue 15:55] =>  0:42
 CLOCK: [2019-12-25 Wed 15:47]--[2019-12-25 Wed 15:59] =>  0:12
@@ -482,7 +482,7 @@ Return nil when CHUNK is not a valid chunk."
 :END:
 *************** END
 
-*** SOMEDAY [#A] reply |- (Recent Questions - Emacs Stack Exchange: Embed org task list from other subtree) :BOOKMARK:
+** SOMEDAY [#A] reply |- (Recent Questions - Emacs Stack Exchange: Embed org task list from other subtree) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-07-24 Wed 20:17]
 :Source: https://emacs.stackexchange.com/questions/51814/embed-org-task-list-from-other-subtree
@@ -493,7 +493,7 @@ Return nil when CHUNK is not a valid chunk."
 CLOCK: [2019-12-17 Tue 23:00]--[2019-12-17 Tue 23:01] =>  0:01
 CLOCK: [2019-08-03 Sat 23:47]--[2019-08-03 Sat 23:49] =>  0:02
 :END:
-*** SOMEDAY [#A] url |- (Is there a way to include an org file in another one and have the contents update in real time? : emacs) :BOOKMARK:
+** SOMEDAY [#A] url |- (Is there a way to include an org file in another one and have the contents update in real time? : emacs) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-12-01 Sun 14:52]
 :Source: https://www.reddit.com/r/emacs/comments/dz5xeb/is_there_a_way_to_include_an_org_file_in_another/
@@ -504,7 +504,7 @@ CLOCK: [2019-08-03 Sat 23:47]--[2019-08-03 Sat 23:49] =>  0:02
 CLOCK: [2019-12-17 Tue 23:29]--[2019-12-17 Tue 23:36] =>  0:07
 - Refiled on [2019-12-02 Mon 00:45]
 :END:
-*** SOMEDAY [#A] consider using |- (How to get feedback on packages before they're in a repository? : emacs) :BOOKMARK:
+** SOMEDAY [#A] consider using |- (How to get feedback on packages before they're in a repository? : emacs) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-12-13 Fri 16:06]
 :Source: https://www.reddit.com/r/emacs/comments/e9jxpi/how_to_get_feedback_on_packages_before_theyre_in/
@@ -514,7 +514,7 @@ CLOCK: [2019-12-17 Tue 23:29]--[2019-12-17 Tue 23:36] =>  0:07
 CLOCK: [2019-12-17 Tue 23:36]--[2019-12-18 Wed 00:29] =>  0:53
 - Refiled on [2019-12-14 Sat 17:28]
 :END:
-*** TODO [#A] url |- (comments by github-alphapapa: /u/github-alphapapa on Cloning/mirroring a region to some other location) :BOOKMARK:
+** TODO [#A] url |- (comments by github-alphapapa: /u/github-alphapapa on Cloning/mirroring a region to some other location) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2020-03-21 Sat 13:46]
 :Source: https://www.reddit.com/r/emacs/comments/flxqei/cloningmirroring_a_region_to_some_other_location/fl22ele/
@@ -526,7 +526,7 @@ CLOCK: [2019-12-17 Tue 23:36]--[2019-12-18 Wed 00:29] =>  0:53
 Interesting, seems like a form of transclusion. Maybe it could be used to implement transclusion in other contexts.
 
 cc: u/justtaft
-*** TODO [#A] url |- (magnars/multifiles.el: Work in progress: View and edit parts of multiple files in one buffer) :BOOKMARK:
+** TODO [#A] url |- (magnars/multifiles.el: Work in progress: View and edit parts of multiple files in one buffer) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2020-03-21 Sat 13:50]
 :Source: https://github.com/magnars/multifiles.el
@@ -535,3 +535,48 @@ cc: u/justtaft
 - Refiled on [2020-03-29 Sun 11:34]
 - Refiled on [2020-03-21 Sat 14:58]
 :END:
+** NEXT [#A] get a feedback email |- Ihor Radchenko <yantar92@gmail.com>: RE: Request for pointers and advice: displaying several buffers inside a single window :EMAIL:
+SCHEDULED: <2020-04-18 Sat>
+:PROPERTIES:
+:CREATED: [2020-04-12 Sun 22:34]
+:EMAIL-SOURCE: [[notmuch:id:87imi4aii4.fsf@localhost]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-04-12 Sun 23:41]
+:END:
+** TODO url |- (Recent Questions - Emacs Stack Exchange: Split code across multiple SRC blocks?)       :BOOKMARK:
+:PROPERTIES:
+:CREATED: [2020-04-06 Mon 16:09]
+:Source: https://emacs.stackexchange.com/questions/57608/split-code-across-multiple-src-blocks
+:END:
+:LOGBOOK:
+- Refiled on [2020-04-16 Thu 15:59]
+CLOCK: [2020-04-16 Thu 15:58]--[2020-04-16 Thu 15:59] =>  0:01
+- Refiled on [2020-04-06 Mon 16:41]
+:END:
+For my current config, I'm tangling an org-mode buffer into my init.el, and I have a few sections where I'd like to insert rich text between segments of Emacs lisp code, like the following:
+
+...
+
+,#+BEGIN_SRC elisp
+(use-package exwm
+  :config
+  (exwm-enable)
+,#+END_SRC
+
+I find that four workspaces is enough to start out with, and I like being able
+to use my X windows across workspaces.
+
+,#+BEGIN_SRC elisp
+  :init
+  (setq exwm-workspace-number 4
+        exwm-workspace-show-all-buffers t
+        exwm-layout-show-all-buffers t)
+,#+END_SRC
+
+...
+
+The issue is, if I C-c ' to edit the second SRC block, it reindents to the beginning of the line. Smartparens is also unhappy about any unmatched closing parentheses I have in subsequent blocks.
+
+Is there anything in org-mode that would support something like this? Perhaps some marker I can tag each block with as a hint that they should all be pulled into the same Org Src buffer when I C-c '
+on one of them?
