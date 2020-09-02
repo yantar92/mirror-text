@@ -3,13 +3,13 @@
 :END:
 
 
-* DOING [#A] Another try of mirror-text
-SCHEDULED: <2020-04-16 Thu .+1d>
+* HOLD [#A] Another try of mirror-text                                                               :HOLD:
 :PROPERTIES:
 :CREATED: [2019-08-03 Sat 20:19]
-:SHOWFROMDATE: 2020-04-18
+:SHOWFROMDATE: 2020-05-09
 :END:
 :LOGBOOK:
+- State "HOLD"       from "DOING"         [2020-05-03 Sun 18:06]
 CLOCK: [2020-04-12 Sun 21:24]--[2020-04-12 Sun 22:06] =>  0:42
 CLOCK: [2020-04-12 Sun 19:56]--[2020-04-12 Sun 21:20] =>  1:24
 CLOCK: [2019-12-31 Tue 15:13]--[2019-12-31 Tue 15:55] =>  0:42
@@ -535,13 +535,13 @@ cc: u/justtaft
 - Refiled on [2020-03-29 Sun 11:34]
 - Refiled on [2020-03-21 Sat 14:58]
 :END:
-** NEXT [#A] get a feedback email |- Ihor Radchenko <yantar92@gmail.com>: RE: Request for pointers and advice: displaying several buffers inside a single window :EMAIL:
-SCHEDULED: <2020-04-18 Sat>
+** WAITING [#A] get a feedback email |- Ihor Radchenko <yantar92@gmail.com>: RE: Request for pointers and advice: displaying several buffers inside a single window :EMAIL:WAITING:
 :PROPERTIES:
 :CREATED: [2020-04-12 Sun 22:34]
 :EMAIL-SOURCE: [[notmuch:id:87imi4aii4.fsf@localhost]]
 :END:
 :LOGBOOK:
+- State "WAITING"    from "NEXT"          [2020-04-25 Sat 18:53]
 - Refiled on [2020-04-12 Sun 23:41]
 :END:
 ** TODO url |- (Recent Questions - Emacs Stack Exchange: Split code across multiple SRC blocks?)       :BOOKMARK:
@@ -580,3 +580,38 @@ The issue is, if I C-c ' to edit the second SRC block, it reindents to the begin
 
 Is there anything in org-mode that would support something like this? Perhaps some marker I can tag each block with as a hint that they should all be pulled into the same Org Src buffer when I C-c '
 on one of them?
+** TODO reply when I get something with transclusion #email -> $:from Opening multiple files in a single buffer? :EMAIL:
+:PROPERTIES:
+:CREATED: [2020-07-27 Mon 08:50]
+:EMAIL-SOURCE: [[notmuch:id:mailman.1824.1592059261.2541.help-gnu-emacs@gnu.org]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-07-27 Mon 08:55]
+:END:
+** SOMEDAY /u/RaidenRiver [reddit] (2020) Anyone tried whacked's transclusion minor mode? (edit a buffer inside another buffer) :BOOKMARK:SOMEDAY:
+:PROPERTIES:
+:ID: reddit_/u/raidenriver2020_anyon
+:CREATED: [2020-07-25 Sat 12:05]
+:Source: https://www.reddit.com/r/emacs/comments/hw34g5/anyone_tried_whackeds_transclusion_minor_mode/
+:END:
+:LOGBOOK:
+- Refiled on [2020-07-28 Tue 17:36]
+CLOCK: [2020-07-28 Tue 17:35]--[2020-07-28 Tue 17:36] =>  0:01
+- Refiled on [2020-07-25 Sat 15:22]
+:END:
+
+# the following bibtex entry should be moved to bibliography if it is good enough
+#+begin_src bibtex
+@misc{reddit_/u/raidenriver2020_anyon,
+  DATE_ADDED =   {Sat Jul 25 12:05:40 2020},
+  author =       {/u/RaidenRiver},
+  howpublished = {reddit},
+  keywords =     {emacs},
+  note =         {Online; accessed 25 July 2020},
+  title =        {Anyone tried whacked's transclusion minor mode?
+                  (edit a buffer inside another buffer)},
+  url =
+                  {https://www.reddit.com/r/emacs/comments/hw34g5/anyone_tried_whackeds_transclusion_minor_mode/},
+  year =         2020,
+}
+#+end_src
