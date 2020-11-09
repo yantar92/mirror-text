@@ -475,13 +475,33 @@ Return nil when CHUNK is not a valid chunk."
 (provide 'mirror-text)
 #+end_src
 
-*************** SOMEDAY check this for the mirror-text |- (Lenticular Text For Emacs)                                    :BOOKMARK:
+** SOMEDAY check this for the mirror-text |- (Lenticular Text For Emacs) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-08-24 Sat 12:29]
 :Source: http://homepages.cs.ncl.ac.uk/phillip.lord/lentic/lenticular.html
 :END:
-*************** END
 
+** TODO consider implementing the idea with transformer/merge functions legalnonsense [Github] org-clones                                          :BOOKMARK:
+:PROPERTIES:
+:ID: 80ecc83f1c6bfbdd1227c388ed3fc640dbf77856
+:CREATED: [2020-09-04 Fri 11:25]
+:Source: https://github.com/legalnonsense/org-clones/issues/1
+:END:
+:LOGBOOK:
+- Refiled on [2020-09-04 Fri 11:53]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{80ecc83f1c6bfbdd1227c388ed3fc640dbf77856,
+  author =       {legalnonsense},
+  howpublished = {Github},
+  note =         {Online; accessed 04 September 2020},
+  title =        {org-clones},
+  url =
+                  {https://github.com/legalnonsense/org-clones/issues/1},
+}
+#+end_src
+:END:
 ** SOMEDAY [#A] reply |- (Recent Questions - Emacs Stack Exchange: Embed org task list from other subtree) :BOOKMARK:
 :PROPERTIES:
 :CREATED: [2019-07-24 Wed 20:17]
@@ -615,3 +635,93 @@ CLOCK: [2020-07-28 Tue 17:35]--[2020-07-28 Tue 17:36] =>  0:01
   year =         2020,
 }
 #+end_src
+** REVIEW /u/itistheblurstoftimes [Reddit:emacs] (2020) [ANN/RFC] Org-clones -- orgmode headings in multiple locations and files            :BOOKMARK:
+:PROPERTIES:
+:ID: da4fe70f0ce0ffdc286348dcff666f4064ab11fd
+:CREATED: [2020-09-02 Wed 09:20]
+:Source: https://www.reddit.com/r/emacs/comments/iks94o/annrfc_orgclones_orgmode_headings_in_multiple/
+:END:
+:LOGBOOK:
+- Refiled on [2020-09-02 Wed 21:14]
+- Refiled on [2020-09-02 Wed 09:51]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{da4fe70f0ce0ffdc286348dcff666f4064ab11fd,
+  author =       {/u/itistheblurstoftimes},
+  howpublished = {Reddit:emacs},
+  keywords =     {emacs},
+  note =         {Online; accessed 02 September 2020},
+  title =        {[ANN/RFC] Org-clones -- orgmode headings in multiple
+                  locations and files},
+  url =
+                  {https://www.reddit.com/r/emacs/comments/iks94o/annrfc_orgclones_orgmode_headings_in_multiple/},
+  year =         2020,
+}
+#+end_src
+:END:
+** HOLD [#A] anyone followup? email |- Dmitrii Korobeinikov <dim1212k@gmail.com>: Re: bug#35419: [Proposal] Buffer Lenses and the Case of Org-Mode (also, Jupyter) :EMAIL:HOLD:
+:PROPERTIES:
+:CREATED: [2019-06-03 Mon 11:04]
+:EMAIL-SOURCE: notmuch:id:CA+Yh0SS=uwztoyBA0P=W_e6-CcKm+v_+zTfeCQU6pZSzKWUBOw@mail.gmail.com
+:SHOWFROMDATE: 2020-05-25
+:SUMMARY:  Make mirror-text better first
+:END:
+:LOGBOOK:
+- Refiled on [2020-09-20 Sun 15:08]
+- State "HOLD"       from "NEXT"          [2020-05-25 Mon 11:51] \\
+  Make mirror-text better first
+CLOCK: [2019-07-17 Wed 14:07]--[2019-07-17 Wed 14:08] =>  0:01
+:END:
+[2019-06-03 Mon 11:04]
+** HOLD [#A] reply comment |- (www.reddit.com) :BOOKMARK:HOLD:
+:PROPERTIES:
+:CREATED: [2019-11-08 Fri 09:11]
+:Source: https://www.reddit.com/r/orgmode/comments/bhlvza/weekly_rorgmode_open_discussion_april_26_2019/euri9sa/?context=3
+:SHOWFROMDATE: 2020-05-07
+:SUMMARY:  Need to implement the idea with dired first
+:END:
+:LOGBOOK:
+- Refiled on [2020-09-20 Sun 15:08]
+- State "HOLD"       from "WAITING"    [2020-04-20 Mon 12:48] \\
+  do once I implement this
+CLOCK: [2020-04-07 Tue 22:25]--[2020-04-07 Tue 22:26] =>  0:01
+- State "WAITING"    from "NEXT"       [2019-12-18 Wed 11:06] \\
+  Need to implement the idea with dired first
+- Refiled on [2019-11-11 Mon 11:06]
+:END:
+** TODO this may be useful for transclusion #email -> $:from buffer name of Org Src... :EMAIL:
+:PROPERTIES:
+:CREATED: [2020-10-13 Tue 22:05]
+:EMAIL-SOURCE: [[notmuch:id:1419444.1602506681@apollo2.minshall.org]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-10-13 Tue 22:10]
+CLOCK: [2020-10-13 Tue 22:05]--[2020-10-13 Tue 22:06] =>  0:01
+:END:
+** SOMEDAY /u/nobiot [Reddit:emacs] (2020) Org-transclusion (alpha v0.0.4) Demo #4 :BOOKMARK:@home:SOMEDAY:
+:PROPERTIES:
+:ID: fd4e4ad22f27f39fe85d526b7132d00cc20840b8
+:CREATED: [2020-11-02 Mon 11:04]
+:Source: [[https://www.reddit.com/r/emacs/comments/jm1nv6/orgtransclusion_alpha_v004_demo_4/]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-11-08 Sun 13:49]
+- State "DONE"       from "NEXT"          [2020-11-08 Sun 13:49]
+CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
+- Refiled on [2020-11-02 Mon 11:32]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{fd4e4ad22f27f39fe85d526b7132d00cc20840b8,
+  author =       {/u/nobiot},
+  howpublished = {Reddit:emacs},
+  keywords =     {emacs},
+  note =         {Online; accessed 02 November 2020},
+  title =        {Org-transclusion (alpha v0.0.4) Demo #4},
+  url =
+                  {https://www.reddit.com/r/emacs/comments/jm1nv6/orgtransclusion_alpha_v004_demo_4/},
+  year =         2020,
+}
+#+end_src
+:END:
