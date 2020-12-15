@@ -72,7 +72,6 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
 *************** TODO copy overlays from some chunks and propagate them to all other chunks. make sure that not too many overlays are copies over and over (add marker to copied overlays and flush them on update)
 *************** END
 
-
 #+name: implementation using buffer modification hooks
 #+begin_src emacs-lisp :tangle mirror-text.el
 ;;; mirror-text.el --- Synchronise changes between text regions -*- lexical-binding: t; -*-
@@ -722,6 +721,69 @@ CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
   url =
                   {https://www.reddit.com/r/emacs/comments/jm1nv6/orgtransclusion_alpha_v004_demo_4/},
   year =         2020,
+}
+#+end_src
+:END:
+** TODO  vspinu [Github] lentic: Create views of the same content in two Emacs buffers :BOOKMARK:misc:
+:PROPERTIES:
+:ID: 626a17c6d18ed60250805d402f8a6bd6b0163225
+:CREATED: [2020-12-14 Mon 21:14]
+:Source: [[https://github.com/vspinu/lentic]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-12-14 Mon 21:15]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{626a17c6d18ed60250805d402f8a6bd6b0163225,
+  author =       {vspinu},
+  howpublished = {Github},
+  note =         {Online; accessed 14 December 2020},
+  title =        {lentic: Create views of the same content in two
+                  Emacs buffers},
+  url =          {https://github.com/vspinu/lentic},
+}
+#+end_src
+:END:
+** TODO  [Reddit:emacs] Possible to embed another org file or entry in an org file :BOOKMARK:misc:
+:PROPERTIES:
+:ID: 20b8ca138e44049217c5a28634d4b1473c433627
+:CREATED: [2020-12-14 Mon 21:27]
+:Source: [[https://reddit.com/r/emacs/comments/debean/possible_to_embed_another_org_file_or_entry_in_an/]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-12-14 Mon 21:37]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{20b8ca138e44049217c5a28634d4b1473c433627,
+  howpublished = {Reddit:emacs},
+  note =         {Online; accessed 14 December 2020},
+  title =        {Possible to embed another org file or entry in an
+                  org file},
+  url =
+                  {https://reddit.com/r/emacs/comments/debean/possible_to_embed_another_org_file_or_entry_in_an/},
+}
+#+end_src
+:END:
+** TODO  legalnonsense [Github] org-clones: Prototype for method of cloning orgmore headers :BOOKMARK:misc:
+:PROPERTIES:
+:ID: 91ecf1b6df46a79b14eaa39bf9bad7d99c4b8d3a
+:CREATED: [2020-12-14 Mon 21:16]
+:Source: [[https://github.com/legalnonsense/org-clones]]
+:END:
+:LOGBOOK:
+- Refiled on [2020-12-14 Mon 21:37]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{91ecf1b6df46a79b14eaa39bf9bad7d99c4b8d3a,
+  author =       {legalnonsense},
+  howpublished = {Github},
+  note =         {Online; accessed 14 December 2020},
+  title =        {org-clones: Prototype for method of cloning orgmore
+                  headers},
+  url =          {https://github.com/legalnonsense/org-clones},
 }
 #+end_src
 :END:
