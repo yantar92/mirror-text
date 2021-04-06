@@ -787,3 +787,21 @@ CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
 }
 #+end_src
 :END:
+** SOMEDAY Kinneyzhang [Github] Kinneyzhang/roam-block: An all-purpose block ref and block embed implement in emacs. :BOOKMARK:misc:SOMEDAY:
+:PROPERTIES:
+:TITLE:    Kinneyzhang/roam-block: An all-purpose block ref and block embed implement in emacs.
+:BTYPE:    misc
+:ID:       Github_kinneyzhangkinney_roam_block_all_purpos90d
+:AUTHOR:   Kinneyzhang
+:CREATED:  [2021-04-05 Mon 19:03]
+:HOWPUBLISHED: Github
+:NOTE:     Online; accessed 05 April 2021
+:URL:      https://github.com/Kinneyzhang/roam-block
+:END:
+:LOGBOOK:
+- Refiled on [2021-04-05 Mon 19:30]
+- Refiled on [2021-04-05 Mon 19:21]
+:END:
+
+
+- Following up: [[id:4d0bd4ad-91e5-41ae-a94e-1cdc97764ab7][clear hanging tasks (just take a short look and maybe mark NEXT!)]]
