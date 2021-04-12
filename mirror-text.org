@@ -3,12 +3,13 @@
 :END:
 
 
-* HOLD [#A] Another try of mirror-text                                                               :HOLD:
+* SOMEDAY [#A] Another try of mirror-text :SOMEDAY:
 :PROPERTIES:
 :CREATED: [2019-08-03 Sat 20:19]
 :SHOWFROMDATE: 2020-05-09
 :END:
 :LOGBOOK:
+- State "SOMEDAY"    from "HOLD"          [2021-04-09 Fri 17:54]
 - State "HOLD"       from "DOING"         [2020-05-03 Sun 18:06]
 CLOCK: [2020-04-12 Sun 21:24]--[2020-04-12 Sun 22:06] =>  0:42
 CLOCK: [2020-04-12 Sun 19:56]--[2020-04-12 Sun 21:20] =>  1:24
