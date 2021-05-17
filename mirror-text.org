@@ -806,3 +806,25 @@ CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
 
 
 - Following up: [[id:4d0bd4ad-91e5-41ae-a94e-1cdc97764ab7][clear hanging tasks (just take a short look and maybe mark NEXT!)]]
+** SOMEDAY nobiot [Github] org-transclusion: (alpha) Emacs package to enable transclusion with Org Mode :BOOKMARK:misc:SOMEDAY:
+:PROPERTIES:
+:ID: 3a0efed2b80738f5fd34940e0f4fe62bc89a5067
+:CREATED: [2020-12-07 Mon 13:26]
+:Source: [[https://github.com/nobiot/org-transclusion]]
+:END:
+:LOGBOOK:
+- Refiled on [2021-05-17 Mon 09:57]
+- Refiled on [2020-12-07 Mon 15:14]
+:END:
+:BIBTEX:
+#+begin_src bibtex
+@misc{3a0efed2b80738f5fd34940e0f4fe62bc89a5067,
+  author =       {nobiot},
+  howpublished = {Github},
+  note =         {Online; accessed 07 December 2020},
+  title =        {org-transclusion: (alpha) Emacs package to enable
+                  transclusion with Org Mode},
+  url =          {https://github.com/nobiot/org-transclusion},
+}
+#+end_src
+:END:
