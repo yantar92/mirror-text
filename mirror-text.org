@@ -828,3 +828,14 @@ CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
 }
 #+end_src
 :END:
+** SOMEDAY #email Léo Ackermann <leo.komba@gmail.com> Large source block causes org-mode to be unusable :EMAIL:SOMEDAY:
+:PROPERTIES:
+:CREATED: [2021-06-22 Tue 10:18]
+:EMAIL-SOURCE: [[notmuch:id:CAFhsWEgAb_im1WpXp3xsfFxcoahKyycM4GaqRin0SUXxD0gMzg@mail.gmail.com]]
+:Source: leo.komba@gmail.com
+:END:
+:LOGBOOK:
+- Refiled on [2021-06-23 Wed 19:09]
+- Refiled on [2021-06-22 Tue 10:22]
+:END:
+
