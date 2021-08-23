@@ -3,7 +3,7 @@
 :END:
 
 
-* SOMEDAY [#A] Another try of mirror-text :SOMEDAY:
+* SOMEDAY [#A] Another try of mirror-text :SOMEDAY:REFILE:
 :PROPERTIES:
 :CREATED: [2019-08-03 Sat 20:19]
 :SHOWFROMDATE: 2020-05-09
@@ -839,3 +839,30 @@ CLOCK: [2020-11-08 Sun 13:47]--[2020-11-08 Sun 13:49] =>  0:02
 - Refiled on [2021-06-22 Tue 10:22]
 :END:
 
+** SOMEDAY whacked [Github] Whacked/transclusion-Minor-Mode: Emacs Minor Mode for Org-Mode File Transclusion Using Embedded Overlays :BOOKMARK:SOMEDAY:
+:PROPERTIES:
+:ID: github_whacked_whack_minor_mode_emacs_minor
+:CREATED: [2020-07-25 Sat 13:25]
+:Source: https://github.com/whacked/transclusion-minor-mode
+:END:
+:LOGBOOK:
+- Refiled on [2021-08-22 Sun 20:42]
+- Refiled on [2021-02-27 Sat 20:46]
+CLOCK: [2020-07-31 Fri 17:00]--[2020-07-31 Fri 17:05] =>  0:05
+- Refiled on [2020-07-25 Sat 15:22]
+CLOCK: [2020-07-25 Sat 13:25]--[2020-07-25 Sat 13:26] =>  0:01
+:END:
+
+# the following bibtex entry should be moved to bibliography if it is good enough
+#+begin_src bibtex
+@misc{github_whacked_whack_minor_mode_emacs_minor,
+  DATE_ADDED =   {Sat Jul 25 13:25:59 2020},
+  author =       {whacked},
+  howpublished = {Github},
+  note =         {Online; accessed 25 July 2020},
+  title =        {Whacked/transclusion-Minor-Mode: Emacs Minor Mode
+                  for Org-Mode File Transclusion Using Embedded
+                  Overlays},
+  url =          {https://github.com/whacked/transclusion-minor-mode},
+}
+#+end_src
