@@ -70,8 +70,8 @@ All the chunks in =mirror-text-midification-list= are marked =:synchronized-p= b
 
 
 
-*************** TODO copy overlays from some chunks and propagate them to all other chunks. make sure that not too many overlays are copies over and over (add marker to copied overlays and flush them on update)
-*************** END
+****************** SOMEDAY copy overlays from some chunks and propagate them to all other chunks. make sure that not too many overlays are copies over and over (add marker to copied overlays and flush them on update) :SOMEDAY:
+****************** END
 
 #+name: implementation using buffer modification hooks
 #+begin_src emacs-lisp :tangle mirror-text.el
@@ -866,3 +866,18 @@ CLOCK: [2020-07-25 Sat 13:25]--[2020-07-25 Sat 13:26] =>  0:01
   url =          {https://github.com/whacked/transclusion-minor-mode},
 }
 #+end_src
+** SOMEDAY magnars [Github] magnars/multifiles.el: Work in progress: View and edit parts of multiple files in one buffer :SOMEDAY:BOOKMARK:misc:
+:PROPERTIES:
+:CREATED:  [2018-10-25 Thu 23:22]
+:URL:      https://github.com/magnars/multifiles.el
+:NOTE:     Online; accessed 23 September 2021
+:HOWPUBLISHED: Github
+:AUTHOR:   magnars
+:ID:       Github-magnars-magnars-multifiles-el-0c4
+:BTYPE:    misc
+:TITLE:    magnars/multifiles.el: Work in progress: View and edit parts of multiple files in one buffer
+:END:
+:LOGBOOK:
+- Refiled on [2021-09-23 Thu 16:19]
+CLOCK: [2018-10-25 Thu 23:22]--[2018-10-25 Thu 23:23] =>  0:01
+:END:
