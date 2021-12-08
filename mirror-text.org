@@ -881,3 +881,13 @@ CLOCK: [2020-07-25 Sat 13:25]--[2020-07-25 Sat 13:26] =>  0:01
 - Refiled on [2021-09-23 Thu 16:19]
 CLOCK: [2018-10-25 Thu 23:22]--[2018-10-25 Thu 23:23] =>  0:01
 :END:
+** SOMEDAY [#A] reply? |- (Org-mode: Clones in org-mode?) :BOOKMARK:SOMEDAY:
+:PROPERTIES:
+:CREATED: [2019-04-15 Mon 13:33]
+:Source: https://www.reddit.com/r/orgmode/comments/bch97g/clones_in_orgmode/
+:END:
+:LOGBOOK:
+- Refiled on [2021-12-07 Tue 10:49]
+CLOCK: [2019-07-09 Tue 17:41]--[2019-07-09 Tue 17:44] =>  0:03
+- State "NEXT"       from "TODO"       [2019-04-26 Fri 04:58]
+:END:
